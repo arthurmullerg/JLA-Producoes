@@ -860,6 +860,10 @@ button {
     .container-text p {
         font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
     }
+    .text-column{
+        margin: 0 10px;
+        text-align: justify;
+    }
 }
 
 
