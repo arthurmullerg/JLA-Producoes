@@ -1,26 +1,30 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    text-decoration: none;
 }
-html, body{
+
+html, body {
     height: 100%;
-  
 }
+
 :root {
-    --main-color: #ff8c00; 
+    --main-color: #ff8c00;
 }
-.header{
+
+.header {
     justify-content: space-between;
     display: flex;
     width: 100%;
-    height: 100%;
     padding: 40px;
     text-align: center;
-    background-color:#f1f1f1;
+    background-color: #f1f1f1;
     align-items: center;
     position: relative;
+    flex-wrap: wrap; /* Garante que os elementos se ajustem quando necessário */
 }
+
 .logo-header {
     width: 160px;
     height: 160px;
@@ -38,6 +42,8 @@ html, body{
 .logo-footer {
     width: 160px;
     height: 160px;
+    max-width: 30vw;
+    max-height: 30vw;
     background: linear-gradient(to bottom, #ff8c00, #4a4a4a);
     border-radius: 50%;
     display: flex;
@@ -49,28 +55,52 @@ html, body{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transform: translateY(20%);
 }
-  /* Estilo para o título principal */
-  .logo h1 {
+
     
+
+@media (max-width: 768px) {
+    .logo-footer {
+        width: 120px;
+        height: 120px;
+        max-width: 25vw;
+        max-height: 25vw;
+    }
+    .logo-header h1,.logo-header  h2{
+        font-size: 14px;
+    }
+    .logo-footer h1,.logo-footer  h2{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-footer {
+        width: 100px;
+        height: 100px;
+        max-width: 20vw;
+        max-height: 20vw;
+    }
+}
+
+.logo h1 {
     font-size: 200%;
     font-weight: bold;
     margin: 0;
-    letter-spacing: 5px; /* Espaçamento entre letras */
-  }
-  
-  /* Estilo para o subtítulo */
-  .logo h2 {
+    letter-spacing: 5px;
+}
+
+.logo h2 {
     font-size: 100%;
     font-weight: bold;
     margin: 0;
-    letter-spacing: 3px; /* Espaçamento entre letras */
-  }
+    letter-spacing: 3px;
+}
 
 .buscar-container {
-    position: relative; /* Para que a lupa seja posicionada dentro do campo */
-  }
-  
-  .buscar {
+    position: relative;
+}
+
+.buscar {
     padding: 10px;
     margin-left: 50px;
     border: 2px solid var(--main-color);
@@ -78,30 +108,31 @@ html, body{
     background-color: #f0f0f0;
     width: 350px;
     outline: none;
-  }
-  
-  .search-btn {
+}
+
+.search-btn {
     position: absolute;
-    right:35px;
+    right: 35px;
     top: 50%;
-    transform: translateY(-50%); /* Alinha verticalmente */
+    transform: translateY(-50%);
     background: none;
     border: none;
-    
-  }
-  .buscar-container input[type="search"]::-webkit-search-cancel-button {
-    display: none; /* Remove o botão de limpar se não quiser */
-  }
+}
+
+.buscar-container input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
 .menu a {
     text-decoration: none;
     color: black;
     margin: 0 15px;
     font-size: 20px;
-    position: relative; /* Adicionei isso para o ::after funcionar */
+    position: relative;
 }
 
 .menu a::after {
-    content: ""; /* Adicionei isso para o ::after existir */
+    content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
@@ -114,67 +145,70 @@ html, body{
 .menu a:hover::after {
     width: 100%;
 }
-.icon-car{
-    
-    background-color:var(--main-color);
+
+.icon-car {
+    background-color: var(--main-color);
     width: 40px;
     border-radius: 20px;
-    
 }
-.container-footer{
+
+.container-footer {
     display: flex;
     width: 100%;
     background-color: #fdfafd;
     margin-top: 15px;
     padding: 35px;
-
+    flex-wrap: wrap;
 }
-.text{
+
+.text {
     margin-right: 30px;
     margin-top: 50px;
     margin-left: 100px;
-    width:35%;
+    width: 35%;
     text-align: justify;
     font-size: 15px;
     font-family: 'Poppins';
-    color:#292C45;
+    color: #292C45;
     text-rendering: optimizeLegibility;
     opacity: 0.8;
 }
+
 .info-contato .telefone p strong,
 .info-contato .email p strong {
-    color: var(--main-color); 
+    color: var(--main-color);
 }
+
 .info-contato .telefone p {
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 .info-contato .telefone p strong {
-    font-size: 14px; 
+    font-size: 14px;
 }
+
 .info-contato .email p {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .info-contato .email p strong {
-    font-size: 14px; 
+    font-size: 14px;
 }
-.info-contato .telefone ,
-.info-contato .email  {
-    color:black;
+
+.info-contato .telefone,
+.info-contato .email {
+    color: black;
     font-weight: bold;
-    
 }
-.footer-contato{    
+
+.footer-contato {
     width: 40%;
     padding: 20px;
     justify-content: space-between;
-    
 }
 
 .btn-footer-contato {
-    
-    background-color: var(--main-color); /* Laranja */
+    background-color: var(--main-color);
     color: white;
     border: none;
     border-radius: 20px;
@@ -182,90 +216,170 @@ html, body{
     font-size: 14px;
     cursor: pointer;
     font-family: 'Poppins';
-  }
-  .btn-footer-contato:hover{
-    transition: 200ms;
-    background-color:#888;
-    transform: scale(1.05);
+}
 
-  }
-/* Informações de Contato */
+.btn-footer-contato:hover {
+    transition: 200ms;
+    background-color: #888;
+    transform: scale(1.05);
+}
+
 .info-contato {
-    top:50%;
+    top: 50%;
     transform: translateY(20%);
     margin-top: 20px;
-  }
-  
-  .info-contato div {
+}
+
+.info-contato div {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-  }
-  
-  .info-contato img {
+}
+
+.info-contato img {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-  }
-  
-  .info-contato p {
+}
+
+.info-contato p {
     font-size: 16px;
     color: #333;
     margin: 0;
-  }
-  
-  .redes-sociais {
+}
+
+.redes-sociais {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre os ícones */
+    gap: 15px;
     margin-top: 20px;
-    align-items: flex-end; /* Alinha os ícones à direita */
+    align-items: flex-end;
     transform: translateY(-100%);
-  }
-  .wats{
+}
+
+.wats, .insta {
     text-align: center;
     padding: 4px;
-    background:transparent;
+    background: transparent;
     border: 2px solid;
     border-radius: 50%;
-    color:#20f567;
     transition: 0.3s ease-in-out;
-  }
-  .insta{
-    text-align: center;
-    padding: 4px;
-    background:transparent;
-    border: 2px solid;
-    border-radius: 50%;
-    color:#f57ec3;
-    transition: 0.3s ease-in-out;
-  }
-  .wats:hover{
-    color:#65d88b;
+}
+
+.wats {
+    color: #20f567;
+}
+
+.insta {
+    color: #f57ec3;
+}
+
+.wats:hover {
+    color: #65d88b;
     transform: scale(1.3) translateY(-5px);
     background-color: #20f567;
 }
-.insta:hover{
-    color:#f57ec3;
+
+.insta:hover {
+    color: #f57ec3;
     transform: scale(1.3) translateY(-5px);
     background-color: #f57ec3;
 }
-.footer{
+
+.footer {
     text-align: center;
     padding: 10px;
     background-color: #f4f4f4;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
 }
-  
 
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-header {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo h1, .logo h2 {
+        font-size: 1.5rem;
+    }
+
+    .container-footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .text {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .footer-contato {
+        width: 80%;
+    }
+
+    .menu a {
+        font-size: 18px;
+    }
+
+    .buscar {
+        width: 250px;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .box{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-footer {
+        padding: 15px;
+    }
+
+    .text {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .footer-contato {
+        width: 90%;
+    }
+
+    .btn-footer-contato {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .buscar {
+        width: 200px;
+    }
+
+    .box {
+        width: 100%;
+    }
+}
 
 /* Container de Introdução */
 .container-intro {
     text-align: center;
     padding: 40px 20px;
     display: flex;
-   justify-content: center;
+    justify-content: center;
 }
 
 .container-intro h3 {
@@ -281,23 +395,24 @@ html, body{
     cursor: pointer;
     margin: 10px auto;
 }
-.box{
-   margin: 0 10px;
-   background-color: #f1f1f1;
-   width: 150px;
-   height: 250px;
-   border-radius:10px;
-} 
-.box a{
-    text-decoration: none;
-    color:#141313;
+
+.box {
+    margin: 0 10px;
+    background-color: #f1f1f1;
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
 }
-.box a:hover{
+
+.box a {
+    text-decoration: none;
+    color: #141313;
+}
+
+.box a:hover {
     color: var(--main-color);
 }
 
-
-/* Container de Destaques */
 .container-destaques {
     background-color: #fff;
     padding: 40px 20px;
@@ -330,6 +445,7 @@ html, body{
     transform: scale(1.05);
 }
 
+
 .produto img {
     max-width: 100%;
     height: auto;
@@ -359,9 +475,6 @@ html, body{
     margin: 20px auto;
     max-width: 1200px;
 }
-.produto a{
-    text-decoration: none;
-}
 
 /* Foto do produto */
 .foto-produto {
@@ -389,7 +502,6 @@ html, body{
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 15px;
-
 }
 
 .preco {
@@ -410,8 +522,6 @@ span {
     cursor: pointer;
 }
 
-
-
 .estoque {
     font-weight: bold;
     color: #2a9d8f;
@@ -422,7 +532,6 @@ span {
     font-size: 0.95rem;
     margin-bottom: 20px;
 }
-
 
 .frete {
     display: flex;
@@ -439,7 +548,6 @@ span {
     width: 180px;
     font-size: 1rem;
 }
-
 
 .btn-compras {
     display: flex;
@@ -474,7 +582,84 @@ button {
     background-color: #cac2c2;
 }
 
-  .ampulheta {
+/* Responsividade */
+
+/* Para telas menores que 1024px */
+@media (max-width: 1024px) {
+    .produto-container {
+        flex-direction: column; /* Empilha os itens em telas menores */
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .foto-produto, .info-produto {
+        flex: none;
+        width: 100%;
+    }
+
+    .preco {
+        font-size: 1.8rem; /* Reduz o tamanho da fonte do preço */
+    }
+
+    .btn-compras button {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos botões */
+    }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    .produto-container {
+        padding: 10px;
+    }
+
+    .foto-produto img {
+        max-width: 80%; /* Reduz o tamanho da imagem */
+    }
+
+    .info-produto h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título */
+    }
+
+    .preco {
+        font-size: 1.6rem; /* Ajusta o tamanho do preço */
+    }
+
+    .text-p {
+        font-size: 0.85rem; /* Ajusta o tamanho da descrição */
+    }
+
+    .frete input[type="text"] {
+        width: 100%; /* Expande o campo de entrada para toda a largura */
+    }
+}
+
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+    .produto-container {
+        padding: 10px;
+    }
+
+    .foto-produto img {
+        max-width: 70%; /* Ajusta ainda mais a largura da imagem */
+    }
+
+    .info-produto h1 {
+        font-size: 1.3rem; /* Diminui o tamanho do título */
+    }
+
+    .preco {
+        font-size: 1.4rem; /* Diminui o tamanho do preço */
+    }
+
+    .btn-compras button {
+        padding: 10px;
+        font-size: 0.8rem; /* Ajusta o tamanho do botão */
+    }
+}
+
+
+.ampulheta {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
@@ -485,28 +670,27 @@ button {
     display: flex;
     flex-direction: column; 
     justify-content: center; 
-  }
+}
 
-  .ampulheta img {
- 
+.ampulheta img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     transition: transform 0.8s ease; 
     transform-origin: center; 
-  
-  }
+}
 
-  .ampulheta p {
+.ampulheta p {
     margin-top: 8px;
     font-size: 16px;
     color: #333;
-  }
+}
 
-  .ampulheta img:hover {
+.ampulheta img:hover {
     transform: rotate(360deg); 
-  }
-  .adicionar {
+}
+
+.adicionar {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 10px;
@@ -518,24 +702,63 @@ button {
     display: flex;
     flex-direction: column; 
     justify-content: center; 
-  }
-  .btn-adicionar{
+}
+
+.btn-adicionar {
     background-color: #f9f9f9;
     cursor: pointer;
-  }
-  .adicionar-file{
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 150px;
-    width: 50%;
-    height: 50%;
-    margin: 80px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-  }
+}
+
+/* Responsividade */
+
+/* Para telas menores que 1024px */
+@media (max-width: 1024px) {
+    .ampulheta {
+        width: 90%; /* Aumenta a largura da ampulheta em tablets */
+    }
+
+    .adicionar {
+        width: 60%; /* Aumenta a largura da seção de adicionar em tablets */
+        margin: 60px 10px; /* Ajusta a margem */
+    }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    .ampulheta {
+        width: 95%; /* Aumenta ainda mais a largura em telas pequenas */
+        padding: 15px; /* Ajusta o padding */
+    }
+
+    .adicionar {
+        width: 80%; /* Ajusta a largura da seção adicionar em telas pequenas */
+        margin: 40px 10px; /* Ajusta a margem */
+        padding: 15px; /* Ajusta o padding */
+    }
+
+    .btn-adicionar {
+        font-size: 14px; /* Reduz o tamanho da fonte do botão em telas pequenas */
+    }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+    .ampulheta {
+        width: 100%; /* Ocupa toda a largura da tela */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .adicionar {
+        width: 90%; /* Aumenta a largura da seção adicionar */
+        margin: 30px 5px; /* Ajusta a margem */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    .btn-adicionar {
+        font-size: 12px; /* Reduz o tamanho da fonte do botão em telas muito pequenas */
+    }
+}
+
   
   
 /* Container de Depoimentos */
@@ -580,9 +803,10 @@ button {
     background-color: #fff;
     padding: 50px 20px;
     display: flex; /* Define os textos lado a lado */
-    justify-content:center; /* Centraliza os textos */
+    justify-content: center; /* Centraliza os textos */
     gap: 80px; /* Espaçamento entre as colunas */
     text-align: left; /* Alinha o texto à esquerda */
+    flex-wrap: wrap; /* Permite que as colunas se ajustem quando necessário */
 }
 
 .text-column {
@@ -601,8 +825,35 @@ button {
     font-size: 18px;
     color: #555;
     line-height: 1.8;
-   
 }
+
+/* Responsividade para telas menores que 1024px */
+@media (max-width: 1024px) {
+    .container-text {
+        gap: 40px; /* Reduz o espaçamento entre as colunas */
+    }
+}
+
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+    .container-text {
+        flex-direction: column; /* Empilha as colunas quando a tela for estreita */
+        gap: 20px; /* Reduz ainda mais o espaçamento */
+        padding: 30px 10px; /* Ajusta o padding */
+    }
+}
+
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+    .container-text h2 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .container-text p {
+        font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
+    }
+}
+
 
 /* Container de Colaboradores */
 .container-colaboradores {
@@ -960,4 +1211,3 @@ button {
         width: 80%;
     }
 }
-
