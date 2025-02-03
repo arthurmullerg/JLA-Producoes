@@ -85,6 +85,9 @@ html, body {
     .footer-contato{
         margin: 0 20px;       
     }
+     .text{
+       transform:translateY(10px);
+    }
 }
 
 .logo h1 {
