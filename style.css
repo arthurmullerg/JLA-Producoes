@@ -747,6 +747,10 @@ button {
     .btn-adicionar {
         font-size: 14px; /* Reduz o tamanho da fonte do botão em telas pequenas */
     }
+ 
+    .container-intro {
+        display: none;
+    }
 }
 
 /* Para telas menores que 480px */
@@ -765,8 +769,7 @@ button {
     .btn-adicionar {
         font-size: 12px; /* Reduz o tamanho da fonte do botão em telas muito pequenas */
     }
-    #intro{
-        display:none;
+
 }
 
   
