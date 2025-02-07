@@ -765,6 +765,8 @@ button {
     .btn-adicionar {
         font-size: 12px; /* Reduz o tamanho da fonte do botão em telas muito pequenas */
     }
+    #intro{
+        display:none;
 }
 
   
