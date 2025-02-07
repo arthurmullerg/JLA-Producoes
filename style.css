@@ -845,6 +845,27 @@ button {
     .container-text {
         gap: 40px; /* Reduz o espaçamento entre as colunas */
     }
+     .header{
+        display: flex;
+    }
+    .logo-header{
+        display: flex;
+        top: 50%;
+        transform: translateY(40%);
+        margin-left: -185px;
+        width: 30%;
+        height: 100px;
+    }
+    .buscar-container{
+        display: flex;
+        top: 50%;
+        left: 17%;
+        transform: translateY(-70%);
+        margin-bottom: 25px;
+    }
+    .icon-car{
+        margin-top: 10px;
+    }
 }
 
 /* Responsividade para telas menores que 768px */
