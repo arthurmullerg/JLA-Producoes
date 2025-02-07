@@ -748,9 +748,7 @@ button {
         font-size: 14px; /* Reduz o tamanho da fonte do botão em telas pequenas */
     }
  
-    .container-intro {
-        display: none;
-    }
+  
 }
 
 /* Para telas menores que 480px */
@@ -845,7 +843,17 @@ button {
     .container-text {
         gap: 40px; /* Reduz o espaçamento entre as colunas */
     }
-     .header{
+     
+}
+
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+    .container-text {
+        flex-direction: column; /* Empilha as colunas quando a tela for estreita */
+        gap: 20px; /* Reduz ainda mais o espaçamento */
+        padding: 30px 10px; /* Ajusta o padding */
+    }
+    .header{
         display: flex;
     }
     .logo-header{
@@ -866,14 +874,8 @@ button {
     .icon-car{
         margin-top: 10px;
     }
-}
-
-/* Responsividade para telas menores que 768px */
-@media (max-width: 768px) {
-    .container-text {
-        flex-direction: column; /* Empilha as colunas quando a tela for estreita */
-        gap: 20px; /* Reduz ainda mais o espaçamento */
-        padding: 30px 10px; /* Ajusta o padding */
+    #intro{
+    display:none
     }
 }
 
